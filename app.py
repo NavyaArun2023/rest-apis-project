@@ -7,6 +7,7 @@ import os
 from flask import Flask,jsonify
 from flask_smorest import Api
 
+
 from db import db
 import models           
 #includes all the  file present in model folder;since __init__file meh 2 file import kar diya already
