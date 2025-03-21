@@ -1,6 +1,7 @@
 FROM python:3.10
 EXPOSE 5000
 WORKDIR /app
-RUN pip install -r requirement.txt
+COPY requirement.txt .
+RUN pip install --no-cache-dir --upgrade -r requirement.txt
 COPY . .
 CMD ["flask", "run", "--host", "0.0.0.0"]
