@@ -40,7 +40,7 @@ class UserLogin(MethodView):
 class TokenRefresh(MethodView): 
     @jwt_required(refresh=True)
     def post(self):
-        current_user=get_jwt_identity
+        current_user=get_jwt_identity()
         new_token=create_access_token(identity=current_user,fresh=False)
         # jti=get_jwt()["jti"]   #if we use this we can only make non fresh token once.more that 1 not possible  
         # BLOCKLIST.add(jti)
